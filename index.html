@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Enviar mensaje por WhatsApp</title>
+<style>
+  /* Estilos opcionales para el botón */
+  .whatsapp-button {
+    background-color: green;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+</style>
+</head>
+<body>
+
+<button class="whatsapp-button" onclick="enviarMensaje()">Enviar mensaje por WhatsApp</button>
+
+<script>
+function enviarMensaje() {
+  const phoneNumber = "3218619436"; // Aquí debes definir el número de teléfono
+  const mensaje = encodeURIComponent("HOLA, Vengo de App de gruapp, necesito ayuda"); // Mensaje predefinido
+  const whatsappLink = `http://localhost:3000/whatsapp/${phoneNumber}?text=${mensaje}`;
+  // Abre el enlace en una nueva ventana o pestaña
+  window.open(whatsappLink, '_blank');
+}
+</script>
+
+</body>
+</html>
